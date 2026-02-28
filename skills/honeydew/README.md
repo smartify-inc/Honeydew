@@ -66,6 +66,14 @@ python scripts/seed_board_for_screenshot.py
 
 Then open http://localhost:5173 and capture the board.
 
+## Publishing
+
+From the repo root, publish with the display name **HoneyDew** (not "HoneyDew by Smartify"):
+
+```bash
+clawhub publish "$(pwd)/skills/honeydew" --slug honeydew --name "HoneyDew" --version 1.0.x --tags latest --changelog "..."
+```
+
 ## Links
 
 - [HoneyDew repo](https://github.com/smartify-inc/Honeydew)
