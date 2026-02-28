@@ -1,0 +1,46 @@
+# Config (contains user-specific profile names)
+config.json
+
+# Database
+backend/kanban.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+.eggs/
+
+# Environment
+.env
+*.env
+
+# Frontend (has its own .gitignore too)
+frontend/node_modules/
+frontend/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ClawHub CLI config/tokens
+.clawhub/
+
+# MkDocs build output
+site/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Logs
+*.log
+
+# Editor
+.idea/
+*.swp
+*.swo
+*~

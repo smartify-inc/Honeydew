@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --neon-cyan: #00f5ff;
+  --neon-magenta: #ff00ff;
+  --neon-purple: #a855f7;
+  --dark-bg: #0a0a0f;
+  --dark-surface: #12121a;
+  --dark-card: #1a1a24;
+  --dark-border: #2a2a3a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #0f0f18 100%);
+  color: #e2e8f0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Neon glow effects */
+.neon-text {
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+}
+
+.neon-border {
+  box-shadow: 0 0 5px var(--neon-cyan), inset 0 0 5px rgba(0, 245, 255, 0.1);
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a4a;
+}
+
+@keyframes board-flip {
+  0% { transform: rotateY(0deg) scale(1); }
+  40% { transform: rotateY(180deg) scale(1.2); }
+  100% { transform: rotateY(360deg) scale(1); }
+}
+
+@keyframes glow-burst {
+  0% { box-shadow: 0 0 12px rgba(0, 245, 255, 0.15); }
+  40% { box-shadow: 0 0 35px rgba(0, 245, 255, 0.7), 0 0 70px rgba(168, 85, 247, 0.4), inset 0 0 15px rgba(0, 245, 255, 0.1); }
+  100% { box-shadow: 0 0 12px rgba(0, 245, 255, 0.15); }
+}
+
+.animate-board-flip {
+  animation: board-flip 0.6s ease-in-out;
+}
+
+.animate-glow-burst {
+  animation: glow-burst 0.6s ease-in-out;
+}

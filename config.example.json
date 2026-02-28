@@ -1,0 +1,14 @@
+{
+  "user": {
+    "profile_id": "tony",
+    "display_name": "Tony"
+  },
+  "agent": {
+    "profile_id": "jarvis",
+    "display_name": "Jarvis"
+  },
+  "boards": [
+    { "name": "Tony's Board", "columns": ["To Do", "In Progress", "Done", "Blocked"] },
+    { "name": "Jarvis's Board", "columns": ["To Do", "In Progress", "Done", "Blocked"] }
+  ]
+}

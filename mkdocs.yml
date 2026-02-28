@@ -1,0 +1,61 @@
+site_name: HoneyDew
+site_description: Your shared task board with your AI assistant.
+site_url: https://smartify.ai
+
+repo_name: smartify-inc/Honeydew
+repo_url: https://github.com/smartify-inc/Honeydew
+
+theme:
+  name: material
+  logo: assets/honeydew-logo-only.png
+  favicon: assets/honeydew-logo-only.png
+  copyright: Copyright &copy; Smartify Inc. | <a href="https://smartify.ai">smartify.ai</a> | <a href="mailto:dev@smartify.ai">dev@smartify.ai</a>
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+nav:
+  - Getting Started: index.md
+  - Configuration: configuration.md
+  - API Reference: api-reference.md
+  - Agent Integration: agent-integration.md
+  - For Agents: for-agents.md
+  - Python Tools: python-tools.md
+  - Security: security.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
