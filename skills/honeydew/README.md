@@ -54,6 +54,18 @@ export SMARTIFY_API_URL=http://192.168.1.50:8000
 | Cards not showing | Check that the board exists (`GET /api/boards`) |
 | Profile mismatch | Verify `config.json` profile IDs match what you pass to the API |
 
+## Screenshot
+
+![HoneyDew board](screenshots/screenshot.png)
+
+To seed a board with this "Ship the beta release" example (user tasks, agent-completed with token/time badges, one blocked, one transferred back), run:
+
+```bash
+python scripts/seed_board_for_screenshot.py
+```
+
+Then open http://localhost:5173 and capture the board.
+
 ## Links
 
 - [HoneyDew repo](https://github.com/smartify-inc/Honeydew)

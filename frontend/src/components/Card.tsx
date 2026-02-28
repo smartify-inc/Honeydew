@@ -26,6 +26,18 @@ export function Card({ card, onClick }: CardProps) {
 
   const priority = PRIORITY_LABELS[card.priority] || PRIORITY_LABELS[2];
 
+  const formatTokens = (n: number) =>
+    n >= 1_000_000 ? `${(n / 1_000_000).toFixed(1)}M` :
+    n >= 1_000 ? `${(n / 1_000).toFixed(1)}k` :
+    `${n}`;
+
+  const formatTime = (s: number) =>
+    s >= 3600 ? `${Math.floor(s / 3600)}h ${Math.floor((s % 3600) / 60)}m` :
+    s >= 60 ? `${Math.floor(s / 60)}m ${Math.round(s % 60)}s` :
+    `${s.toFixed(1)}s`;
+
+  const hasAgentStats = card.agent_tokens_used != null || card.agent_execution_time_seconds != null;
+
   return (
     <div
       ref={setNodeRef}
@@ -68,11 +80,27 @@ export function Card({ card, onClick }: CardProps) {
         </p>
       )}
 
-      {/* Footer with priority and due date */}
+      {/* Footer with priority, agent stats, and due date */}
       <div className="flex items-center justify-between mt-2">
-        <span className={`text-xs px-2 py-0.5 rounded-full ${priority.color}`}>
-          {priority.label}
-        </span>
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <span className={`text-xs px-2 py-0.5 rounded-full ${priority.color}`}>
+            {priority.label}
+          </span>
+          {hasAgentStats && (
+            <>
+              {card.agent_tokens_used != null && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400" title={`${card.agent_tokens_used.toLocaleString()} tokens`}>
+                  {formatTokens(card.agent_tokens_used)} tok
+                </span>
+              )}
+              {card.agent_execution_time_seconds != null && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-400" title={`${card.agent_execution_time_seconds}s execution time`}>
+                  {formatTime(card.agent_execution_time_seconds)}
+                </span>
+              )}
+            </>
+          )}
+        </div>
         {card.due_date && (
           <span className="text-xs text-gray-400 flex items-center gap-1">
             <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -387,7 +387,7 @@ export function Board() {
             <img src={honeydewLogoOnly} alt="HoneyDew" className="h-10 w-10 md:h-[86px] md:w-[86px] object-contain shrink-0" />
             <div className="flex items-center gap-1.5 md:block">
               <img src={honeydewTextOnly} alt="HoneyDew" className="h-4 md:h-7 w-auto object-contain" />
-              <p className="text-[9px] md:text-xs font-bold tracking-widest md:mt-1 bg-gradient-to-r from-green-400 to-orange-400 bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(74,222,128,0.5)]">by Smartify Inc.</p>
+              <p className="text-[9px] md:text-xs font-bold tracking-widest md:mt-1 bg-gradient-to-r from-green-400 to-orange-400 bg-clip-text text-transparent drop-shadow-[0_0_6px_rgba(74,222,128,0.5)]">by Smartify</p>
             </div>
           </div>
 

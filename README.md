@@ -41,7 +41,11 @@ That's the loop. Assign → Work → Review → Done.
 
 ## Screenshot
 
-> Run `./start.sh` and open `http://localhost:5173` to see the board live.
+<p align="center">
+  <img src="frontend/src/assets/screenshot.png" alt="HoneyDew Kanban board with To Do, In Progress, Done, and Blocked columns" width="800" />
+</p>
+
+Run `./start.sh` and open http://localhost:5173 to see the board live.
 
 ---
 
