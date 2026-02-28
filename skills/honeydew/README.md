@@ -2,6 +2,8 @@
 
 By [Smartify Inc.](https://smartify.ai) | [dev@smartify.ai](mailto:dev@smartify.ai)
 
+**Source:** [github.com/smartify-inc/Honeydew](https://github.com/smartify-inc/Honeydew)
+
 Manage your Kanban boards and tasks through the OpenClaw agent.
 
 ## What it does

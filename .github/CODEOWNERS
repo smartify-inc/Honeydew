@@ -1,0 +1,3 @@
+# Code owners: only this user can satisfy "Require review from Code Owners" in branch protection.
+# Update the username below if your GitHub handle differs from smartify-dot-ai.
+* @smartify-dot-ai

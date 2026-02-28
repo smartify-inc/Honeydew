@@ -41,7 +41,7 @@ That's the loop. Assign → Work → Review → Done.
 
 ## Screenshot
 
-> Run `./start.sh` and open `http://localhost:5173` to see the board live._
+> Run `./start.sh` and open `http://localhost:5173` to see the board live.
 
 ---
 
@@ -265,7 +265,9 @@ HoneyDew is designed for **local and trusted-network use**. There is no built-in
 
 ## Documentation
 
-HoneyDew has a full documentation site built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/). The easiest way to serve it is alongside the app:
+The docs are published at **[https://honeydocs.smartify.ai](https://honeydocs.smartify.ai)** (built from `main` via GitHub Actions).
+
+HoneyDew has a full documentation site built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/). The easiest way to serve it locally is alongside the app:
 
 ```bash
 ./start.sh --docs

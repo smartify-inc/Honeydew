@@ -1,0 +1,56 @@
+# Build the MkDocs site and deploy to GitHub Pages at honeydocs.smartify.ai
+#
+# One-time setup in repo Settings:
+#   1. Settings → Pages → Build and deployment: Source = "GitHub Actions"
+#   2. Settings → Pages → Custom domain: honeydocs.smartify.ai (then Enforce HTTPS)
+#   3. In your DNS: CNAME honeydocs.smartify.ai → smartify-inc.github.io
+name: Deploy Docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install MkDocs and theme
+        run: pip install -r docs/requirements.txt
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - name: Add CNAME for custom domain
+        run: echo "honeydocs.smartify.ai" > site/CNAME
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
